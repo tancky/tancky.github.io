@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tancky.github.io/"/>
-  <updated>2016-12-13T13:51:02.845Z</updated>
+  <updated>2016-12-13T18:44:16.199Z</updated>
   <id>https://tancky.github.io/</id>
   
   <author>
@@ -16,15 +16,48 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hello World</title>
+    <link href="https://tancky.github.io/2016/12/14/hello-world/"/>
+    <id>https://tancky.github.io/2016/12/14/hello-world/</id>
+    <published>2016-12-13T18:44:16.199Z</published>
+    <updated>2016-12-13T18:44:16.199Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+      <category term="html/css" scheme="https://tancky.github.io/categories/html-css/"/>
+    
+    
+      <category term="blog" scheme="https://tancky.github.io/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
     <title>那些年我们一起踩过的坑——CSS中的命名及书写建议</title>
     <link href="https://tancky.github.io/2016/12/13/%E9%82%A3%E4%BA%9B%E5%B9%B4%E6%88%91%E4%BB%AC%E4%B8%80%E8%B5%B7%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91%E2%80%94%E2%80%94CSS%E4%B8%AD%E7%9A%84%E5%91%BD%E5%90%8D%E5%8F%8A%E4%B9%A6%E5%86%99%E5%BB%BA%E8%AE%AE/"/>
     <id>https://tancky.github.io/2016/12/13/那些年我们一起踩过的坑——CSS中的命名及书写建议/</id>
     <published>2016-12-13T13:49:14.260Z</published>
-    <updated>2016-12-13T13:51:02.845Z</updated>
+    <updated>2016-12-13T18:44:42.195Z</updated>
     
     <content type="html"><![CDATA[<p>今天来谈一谈我之前踩过的CSS坑之命名问题，相信很多跟我一样最开始学习CSS的时候都不知道怎样命名，有的起名字直接就是a，b，c，d（至少我初学的时候真的这么干过），更有甚者也会用汉语拼音来命名（例如这样：toubu，neirong，dibu等等），这些命名都是非常不好的习惯，在碰到很多复杂的页面布局时，这样命名会使自己不知所措，找一个class找很久都找不到，非常影响工（xue）作（xi）效率。<a id="more"></a>经过我的多番搜寻与总结下，写了这篇博文。</p>
-<h2 id="为什么需要命名规范？"><a href="#为什么需要命名规范？" class="headerlink" title="为什么需要命名规范？"></a>为什么需要命名规范？</h2><pre><code>合理、科学地对CSS代码命名,能够精简CSS代码,提高代码的开发效率,方便在日常工作中对网站进行维护与修改.遵循W3C所规定的语义化标准。
-</code></pre><h2 id="命名的基本标准"><a href="#命名的基本标准" class="headerlink" title="命名的基本标准"></a>命名的基本标准</h2><ul>
+<h2 id="为什么需要命名规范？"><a href="#为什么需要命名规范？" class="headerlink" title="为什么需要命名规范？"></a>为什么需要命名规范？</h2><blockquote>
+<p>合理、科学地对CSS代码命名,能够精简CSS代码,提高代码的开发效率,方便在日常工作中对网站进行维护与修改.遵循W3C所规定的语义化标准。</p>
+</blockquote>
+<h2 id="命名的基本标准"><a href="#命名的基本标准" class="headerlink" title="命名的基本标准"></a>命名的基本标准</h2><ul>
 <li><p>类名使用小写字母，以中划线/下划线分隔</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
@@ -35,13 +68,19 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"pinyin"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>尽量不缩写，除非一看就能懂的单词</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fl"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> //fr即float right</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fl"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>     //fr即float: right;</div></pre></td></tr></table></figure>
+</li>
+<li><p>禁用通配符，影响性能</p>
 </li>
 </ul>
-<ul>
-<li>禁用通配符，影响性能<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"> *&#123;</div><div class="line"> margin：0；</div><div class="line"> padding：0；</div><div class="line"> &#125;</div><div class="line"></div><div class="line">``` </div><div class="line">## CSS中的书写顺序</div><div class="line">- 位置属性(position, display, float等)</div><div class="line">- 大小(width, height, padding, margin)</div><div class="line">- 文字系列(font系列, line-height, letter-spacing, color text-align等)</div><div class="line">- 背景(background, border等)</div><div class="line">- 其他(animation, transition等)</div><div class="line">```html</div><div class="line"> .box&#123;</div><div class="line">   position:relative;</div><div class="line">   width:100px;</div><div class="line">   height:100px;</div><div class="line">   font-size:14px;</div><div class="line">   text-align:center;</div><div class="line">   background-color:#ccc;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-</li>
+<h2 id="CSS中的书写顺序"><a href="#CSS中的书写顺序" class="headerlink" title="CSS中的书写顺序"></a>CSS中的书写顺序</h2><ul>
+<li>位置属性(position, display, float等)</li>
+<li>大小(width, height, padding, margin)</li>
+<li>文字系列(font系列, line-height, letter-spacing, color text-align等)</li>
+<li>背景(background, border等)</li>
+<li>其他(animation, transition等)</li>
 </ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">  position:relative;</div><div class="line">  width:100px;</div><div class="line">  height:100px;</div><div class="line">  font-size:14px;</div><div class="line">  text-align:center;</div><div class="line">  background-color:#ccc;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="常用的class命名规范"><a href="#常用的class命名规范" class="headerlink" title="常用的class命名规范"></a>常用的class命名规范</h2><ul>
 <li><p>页面结构区</p>
 <p> 容器: container<br>　　页头：header<br>　　内容：content/container<br>　　页面主体：main<br>　　页尾：footer<br>　　导航：nav<br>　　侧栏：sidebar<br>　　栏目：column<br>　　页面外围控制整体佈局宽度：wrapper<br>　　左右中：left right center</p>
@@ -229,37 +268,6 @@
     
     
       <category term="Sublime Text" scheme="https://tancky.github.io/tags/Sublime-Text/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://tancky.github.io/2016/12/10/hello-world/"/>
-    <id>https://tancky.github.io/2016/12/10/hello-world/</id>
-    <published>2016-12-10T06:03:34.540Z</published>
-    <updated>2016-12-10T15:09:52.278Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-      <category term="html/css" scheme="https://tancky.github.io/categories/html-css/"/>
-    
-    
-      <category term="blog" scheme="https://tancky.github.io/tags/blog/"/>
     
   </entry>
   
