@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tancky.github.io/"/>
-  <updated>2016-12-21T10:56:25.650Z</updated>
+  <updated>2016-12-21T11:01:42.992Z</updated>
   <id>https://tancky.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://tancky.github.io/2016/12/21/%E7%90%86%E8%A7%A3JavaScript%E4%B8%AD%E7%9A%84%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/"/>
     <id>https://tancky.github.io/2016/12/21/理解JavaScript中的事件委托/</id>
     <published>2016-12-21T10:53:31.803Z</published>
-    <updated>2016-12-21T10:56:25.650Z</updated>
+    <updated>2016-12-21T11:01:42.992Z</updated>
     
     <content type="html"><![CDATA[<p>在我们平常工作或学习编写JS代码的过程中，经常会做的一件事就是给某个元素绑定事件。<a id="more"></a>例如鼠标点击，移入，移出等等，以响应用户的某种行为，举个栗子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn=<span class="built_in">document</span>.getElementById(<span class="string">"btn"</span>);</div><div class="line">    btn.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="string">"hello world!"</span>);    </div><div class="line">    &#125;;</div></pre></td></tr></table></figure></p>
 <p>上述的栗子是当用户点击某个按钮时会弹出对话框显示”hello world” 。但是在某些情况下，我们期望页面上的一些元素响应用户同样的动作，举个例子。在用户点击列表的每一项时，将其内容显示在div里。例如这样：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;ul class="list"&gt;</div><div class="line">    &lt;li&gt;1&lt;/li&gt;</div><div class="line">    &lt;li&gt;2&lt;/li&gt;</div><div class="line">    &lt;li&gt;3&lt;/li&gt;</div><div class="line">    &lt;li&gt;4&lt;/li&gt;</div><div class="line">    &lt;li&gt;5&lt;/li&gt;</div><div class="line">    …</div><div class="line">    &lt;li&gt;100&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">&lt;div class="list-show"&gt;&lt;/div&gt;</div></pre></td></tr></table></figure></p>
@@ -47,10 +47,7 @@
 <ul>
 <li>事件委托的优点</li>
 </ul>
-<p>1.使用事件委托可以明显减少dom的操作次数，优化性能和节约内存空间。</p>
-<ol>
-<li>新添加的元素依然会有之前添加的事件（即新来的员工也能收到快递）。在上例中，如果通过AJAX向列表增加新项，新添加项仍能响应用户点击。在页面动态变化后，不需要重新检索元素和绑定事件。</li>
-</ol>
+<p>A.使用事件委托可以明显减少dom的操作次数，优化性能和节约内存空间。<br>B.新添加的元素依然会有之前添加的事件（即新来的员工也能收到快递）。在上例中，如果通过AJAX向列表增加新项，新添加项仍能响应用户点击。在页面动态变化后，不需要重新检索元素和绑定事件。</p>
 <p>本文完！</p>
 <p>撒花！</p>
 ]]></content>
