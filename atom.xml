@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tancky.github.io/"/>
-  <updated>2017-06-26T14:40:31.841Z</updated>
+  <updated>2017-06-26T14:47:01.687Z</updated>
   <id>https://tancky.github.io/</id>
   
   <author>
@@ -16,22 +16,22 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Vue-cli#2.0项目结构分析</title>
     <link href="https://tancky.github.io/2017/06/26/Vue-cli-2-0%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90/"/>
     <id>https://tancky.github.io/2017/06/26/Vue-cli-2-0项目结构分析/</id>
     <published>2017-06-26T14:41:30.281Z</published>
-    <updated>2017-06-26T14:40:31.841Z</updated>
+    <updated>2017-06-26T14:47:01.687Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Vue-cli-2-0项目结构分析"><a href="#Vue-cli-2-0项目结构分析" class="headerlink" title="Vue-cli#2.0项目结构分析"></a>Vue-cli#2.0项目结构分析</h1><p>最近在学习Vue.js框架，正打算做一个小项目练练手。第一步当然少不了强大的Vue-cli脚手架工具。那么什么是Vue-cli呢？</p>
+    <content type="html"><![CDATA[<h1 id="Vue-cli-2-0项目结构分析"><a href="#Vue-cli-2-0项目结构分析" class="headerlink" title="Vue-cli#2.0项目结构分析"></a>Vue-cli#2.0项目结构分析</h1><p>最近在学习Vue.js框架，正打算做一个小项目练练手。第一步当然少不了强大的Vue-cli脚手架工具。那么什么是Vue-cli呢？<a id="more"></a></p>
 <blockquote>
 <p>Vue-cli是vue官方出品的快速构建单页应用的脚手架，他可以快速的帮你构建一个强大的Vue.js项目。</p>
 </blockquote>
-<h2 id="一-安装Vue-cli"><a href="#一-安装Vue-cli" class="headerlink" title="一.  安装Vue-cli"></a>一.  安装Vue-cli</h2><pre><code>npm install vue-cli -g
-</code></pre><p>-g :代表全局安装。如果你安装时报错，一般是网络问题，你可以尝试用cnpm来进行安装。安装完成后，可以用vue -V来进行查看 vue-cli的版本号。注意这里的V是大写的。我这里版本号是2.8.1.</p>
+<h2 id="一-安装Vue-cli"><a href="#一-安装Vue-cli" class="headerlink" title="一.  安装Vue-cli"></a>一.  安装Vue-cli</h2><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install vue-<span class="keyword">cli</span> -g</div></pre></td></tr></table></figure>
+<p>-g :代表全局安装。如果你安装时报错，一般是网络问题，你可以尝试用cnpm来进行安装。安装完成后，可以用vue -V来进行查看 vue-cli的版本号。注意这里的V是大写的。我这里版本号是2.8.1.</p>
 <p>如果vue -V的命令管用了，说明已经顺利的把vue-cli安装到我们的计算机里了。</p>
 <h2 id="二-初始化项目"><a href="#二-初始化项目" class="headerlink" title="二. 初始化项目"></a>二. 初始化项目</h2><p>我们用vue init命令来初始化项目，具体看一下这条命令的使用方法。</p>
-<pre><code>$ vue init &lt;template-name&gt; &lt;project-name&gt;
-</code></pre><p>init：表示我要用vue-cli来初始化项目</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vue init <span class="tag">&lt;<span class="name">template-name</span>&gt;</span> <span class="tag">&lt;<span class="name">project-name</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>init：表示我要用vue-cli来初始化项目</p>
 <p>template-name：表示模板名称，vue-cli官方为我们提供了5种模板，</p>
 <p>webpack-一个全面的webpack+vue-loader的模板，功能包括热加载，linting,检测和CSS扩展。</p>
 <p>webpack-simple-一个简单webpack+vue-loader的模板，不包含其他功能，让你快速的搭建vue的开发环境。</p>
@@ -40,8 +40,8 @@
 <p>simple-一个最简单的单页应用模板。</p>
 <p>project-name：标识项目名称，这个你可以根据自己的项目来起名字。</p>
 <p>在实际开发中，一般我们都会使用webpack这个模板，那我们这里也安装这个模板，在命令行输入以下命令：</p>
-<pre><code>vue init webpack vuecliTest
-</code></pre><p>输入命令后，会询问我们几个简单的选项，我们根据自己的需要进行填写就可以了。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">vue init webpack vuecliTest</span></div></pre></td></tr></table></figure>
+<p>输入命令后，会询问我们几个简单的选项，我们根据自己的需要进行填写就可以了。</p>
 <p>Project name :项目名称 ，如果不需要更改直接回车就可以了。注意：这里不能使用大写，所以我把名称改成了vueclitest</p>
 <p>Project description:项目描述，默认为A Vue.js project,直接回车，不用编写。</p>
 <p>Author：作者，如果你有配置git的作者，他会读取。</p>
@@ -104,10 +104,14 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Vue-cli-2-0项目结构分析&quot;&gt;&lt;a href=&quot;#Vue-cli-2-0项目结构分析&quot; class=&quot;headerlink&quot; title=&quot;Vue-cli#2.0项目结构分析&quot;&gt;&lt;/a&gt;Vue-cli#2.0项目结构分析&lt;/h1&gt;&lt;p&gt;最近在学习Vue.j
+      &lt;h1 id=&quot;Vue-cli-2-0项目结构分析&quot;&gt;&lt;a href=&quot;#Vue-cli-2-0项目结构分析&quot; class=&quot;headerlink&quot; title=&quot;Vue-cli#2.0项目结构分析&quot;&gt;&lt;/a&gt;Vue-cli#2.0项目结构分析&lt;/h1&gt;&lt;p&gt;最近在学习Vue.js框架，正打算做一个小项目练练手。第一步当然少不了强大的Vue-cli脚手架工具。那么什么是Vue-cli呢？
     
     </summary>
     
+      <category term="JavaScript" scheme="https://tancky.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="Vue.js" scheme="https://tancky.github.io/tags/Vue-js/"/>
     
   </entry>
   
