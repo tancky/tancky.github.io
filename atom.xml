@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tancky.github.io/"/>
-  <updated>2017-07-13T04:45:44.829Z</updated>
+  <updated>2017-07-13T15:32:08.808Z</updated>
   <id>https://tancky.github.io/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue项目打包上线流程</title>
+    <link href="https://tancky.github.io/2017/07/13/vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E4%B8%8A%E7%BA%BF%E6%B5%81%E7%A8%8B/"/>
+    <id>https://tancky.github.io/2017/07/13/vue项目打包上线流程/</id>
+    <published>2017-07-13T15:31:06.323Z</published>
+    <updated>2017-07-13T15:32:08.808Z</updated>
+    
+    <content type="html"><![CDATA[<p> 自己写的Vue项目终于大致完成了，由于没有买域名和服务器，但是项目要上线。思来想去发现github上可以直接用创建个人项目的上线演示，这给我带来了极大的便利，在维护源码的同时还能生成项目主页可供在线预览。简直美滋滋。<a id="more"></a>但是由于第一次用这玩意儿，花费了我整整一天的时间，期间出现了各种问题，但俗话说得好：功夫不负有心人，终于在晚上把他给上线了，哈哈哈。</p>
+<p>Github给用户提供了运行静态页面的地址，如何展示个人项目的静态页面？以下是创建项目主页的关键：</p>
+<blockquote>
+<p>gh-pages分支</p>
+<p>访问地址：[github用户名].github.io/[项目仓库名]，如：tancky5.github.io/vue-acfun（不要脸的把自己的项目贴了上来哈哈）</p>
+</blockquote>
+<p>生成项目主页首先是将想要展示的静态页面推送的Github个人项目仓库的gh-pages分支下，然后通过上述的访问形式访问。</p>
+<p>至于如何使用git提交到github上这里我就直接忽略了，有兴趣的可以自己去网上看教程，一找一大堆。</p>
+<p>由于我是使用vue-cli脚手架搭建的项目，所以代码压缩打包只需要npm run build一样就可以了，接下来才是关键!!!</p>
+<p>第一步： 在github上点击你的项目进去之后点击settings</p>
+<p><img src="http://i4.piimg.com/1949/931e3f36070f9f95.png" alt="项目"></p>
+<p>第二步： 找到github-pages 切换到gh-pages分支，然后点击save(保存),就会生成如图所示的链接，这个链接就是你的项目预览地址</p>
+<p><img src="http://i4.piimg.com/1949/74e5832ad5fdc34e.png" alt="项目"></p>
+<p>第三步：在主分支master下run build打包代码（一定要先在master分支下build）,然后切换到gh-pages分支 </p>
+<ol>
+<li>git checkout -b gh-pages</li>
+</ol>
+<ol>
+<li><p>在gh-pages再次执行 npm run build命令</p>
+</li>
+<li><p>将dist目录下的所有文件夹推送至远程仓库的gh-pages分支，执行以下命令：</p>
+</li>
+</ol>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//强制添加dist文件夹，因为.gitignore文件中定义了忽略该文件</span></div><div class="line">git <span class="built_in">add</span> -f <span class="built_in">dist</span></div><div class="line"></div><div class="line"><span class="comment">//提交到本地暂存区</span></div><div class="line">git commit -m <span class="string">'Initial the page of project'</span></div><div class="line"></div><div class="line"><span class="comment">//部署dist目录下的代码</span></div><div class="line">git subtree push --prefix <span class="built_in">dist</span> origin gh-pages</div></pre></td></tr></table></figure>
+<p>此时打开刚才的链接就可以浏览自己的项目了，当然需要等那么一小会儿，毕竟页面需要加载时间。</p>
+<p>虽然看着上面的流程很简单，其实真正自己上线的时候一个不小心就会有一堆错误，尤其是要先在master分支下build一次，然后切换到gh-pages分支下再build一次,否则的话，自己去试试就知道了，这是个深坑，多么痛的领悟！！！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt; 自己写的Vue项目终于大致完成了，由于没有买域名和服务器，但是项目要上线。思来想去发现github上可以直接用创建个人项目的上线演示，这给我带来了极大的便利，在维护源码的同时还能生成项目主页可供在线预览。简直美滋滋。
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://tancky.github.io/categories/JavaScript/"/>
+    
+    
+      <category term="Vue.js" scheme="https://tancky.github.io/tags/Vue-js/"/>
+    
+  </entry>
   
   <entry>
     <title>vue-cli上线打包出现的图片路径解析问题</title>
@@ -171,7 +219,7 @@
 </li>
 </ul>
 <h3 id="2、main-js文件解读"><a href="#2、main-js文件解读" class="headerlink" title="2、main.js文件解读"></a>2、main.js文件解读</h3><p>main.js是整个项目的入口文件,在src文件夹下：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>      </div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span></div><div class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">'./router'</span></div><div class="line"></div><div class="line">Vue.config.productionTip = <span class="keyword">false</span>   <span class="comment">//生产环境提示，这里设置成了false</span></div><div class="line"></div><div class="line"><span class="comment">/* eslint-disable no-new */</span></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  el: <span class="string">'#app'</span>,</div><div class="line">  router,</div><div class="line">  template: <span class="string">'&lt;App/&gt;'</span>,</div><div class="line">  components: &#123; App &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>      </div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span></div><div class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">'./router'</span></div><div class="line"></div><div class="line">Vue.config.productionTip = <span class="literal">false</span>   <span class="comment">//生产环境提示，这里设置成了false</span></div><div class="line"></div><div class="line"><span class="comment">/* eslint-disable no-new */</span></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#app'</span>,</div><div class="line">  router,</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;App/&gt;'</span>,</div><div class="line">  <span class="attr">components</span>: &#123; App &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p>通过代码可以看出这里引进了App的组件和<app>的模板，它是通过 import App from ‘./App’这句代码引入的。  我们找到App.vue文件，打开查看。</app></p>
 <h3 id="3、App-vue文件"><a href="#3、App-vue文件" class="headerlink" title="3、App.vue文件:"></a>3、App.vue文件:</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"./assets/logo.png"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">'app'</span></div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line"><span class="selector-id">#app</span> &#123;</div><div class="line">  <span class="attribute">font-family</span>: <span class="string">'Avenir'</span>, Helvetica, Arial, sans-serif;</div><div class="line">  <span class="attribute">-webkit-font-smoothing</span>: antialiased;</div><div class="line">  <span class="attribute">-moz-osx-font-smoothing</span>: grayscale;</div><div class="line">  <span class="attribute">text-align</span>: center;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#2c3e50</span>;</div><div class="line">  <span class="attribute">margin-top</span>: <span class="number">60px</span>;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>app.vue文件我们可以分成三部分解读，</p>

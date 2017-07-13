@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[vue项目打包上线流程]]></title>
+      <url>%2F2017%2F07%2F13%2Fvue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E4%B8%8A%E7%BA%BF%E6%B5%81%E7%A8%8B%2F</url>
+      <content type="text"><![CDATA[自己写的Vue项目终于大致完成了，由于没有买域名和服务器，但是项目要上线。思来想去发现github上可以直接用创建个人项目的上线演示，这给我带来了极大的便利，在维护源码的同时还能生成项目主页可供在线预览。简直美滋滋。但是由于第一次用这玩意儿，花费了我整整一天的时间，期间出现了各种问题，但俗话说得好：功夫不负有心人，终于在晚上把他给上线了，哈哈哈。 Github给用户提供了运行静态页面的地址，如何展示个人项目的静态页面？以下是创建项目主页的关键： gh-pages分支 访问地址：[github用户名].github.io/[项目仓库名]，如：tancky5.github.io/vue-acfun（不要脸的把自己的项目贴了上来哈哈） 生成项目主页首先是将想要展示的静态页面推送的Github个人项目仓库的gh-pages分支下，然后通过上述的访问形式访问。 至于如何使用git提交到github上这里我就直接忽略了，有兴趣的可以自己去网上看教程，一找一大堆。 由于我是使用vue-cli脚手架搭建的项目，所以代码压缩打包只需要npm run build一样就可以了，接下来才是关键!!! 第一步： 在github上点击你的项目进去之后点击settings 第二步： 找到github-pages 切换到gh-pages分支，然后点击save(保存),就会生成如图所示的链接，这个链接就是你的项目预览地址 第三步：在主分支master下run build打包代码（一定要先在master分支下build）,然后切换到gh-pages分支 git checkout -b gh-pages 在gh-pages再次执行 npm run build命令 将dist目录下的所有文件夹推送至远程仓库的gh-pages分支，执行以下命令： 12345678//强制添加dist文件夹，因为.gitignore文件中定义了忽略该文件git add -f dist//提交到本地暂存区git commit -m 'Initial the page of project'//部署dist目录下的代码git subtree push --prefix dist origin gh-pages 此时打开刚才的链接就可以浏览自己的项目了，当然需要等那么一小会儿，毕竟页面需要加载时间。 虽然看着上面的流程很简单，其实真正自己上线的时候一个不小心就会有一堆错误，尤其是要先在master分支下build一次，然后切换到gh-pages分支下再build一次,否则的话，自己去试试就知道了，这是个深坑，多么痛的领悟！！！]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[vue-cli上线打包出现的图片路径解析问题]]></title>
       <url>%2F2017%2F07%2F13%2Fvue-cli%E4%B8%8A%E7%BA%BF%E6%89%93%E5%8C%85%E5%87%BA%E7%8E%B0%E7%9A%84%E5%9B%BE%E7%89%87%E8%B7%AF%E5%BE%84%E8%A7%A3%E6%9E%90%E9%97%AE%E9%A2%98%2F</url>
       <content type="text"><![CDATA[自己写的移动端项目（仿Acfun弹幕视频网）基本上已经搞定了，可是在npm run build打包上线时却出现了问题，关于图片资源路径解析的问题，在网上查了很久，终于找到了解决方案。 由于用的是vue-cli脚手架搭建的项目，所以图片默认的存放地址是src/assets/img下。 在开发过程中，大部分情况下都是用img标签来引用图片资源，like this： or this: 如果所有的图片资源都是用img标签来引用的话，vue-cli在上线打包的时候路径解析不会出现问题亲测。但是如果用css的background-img来引用图片资源的话打包时候就会报错！！！ like this： 解决方案来了（来自stackoverflow）： 划重点： 1.在 config/index.js 中修改 assetsPublicPath 为 ./ （上线打包时需要更改的目录路径） 2.在 build/utils.js 中的 ExtractTextPlugin.extract 传入参数 publicPath: ‘../../‘ 只需以上两步，就能完美解决本地和服务器上资源url解析的问题。]]></content>
