@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tancky.github.io/"/>
-  <updated>2017-07-13T15:32:08.808Z</updated>
+  <updated>2017-10-30T15:07:38.017Z</updated>
   <id>https://tancky.github.io/</id>
   
   <author>
@@ -16,11 +16,61 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>微信小程序踩坑心得（一）电商倒计时效果实现</title>
+    <link href="https://tancky.github.io/2017/10/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B8%A9%E5%9D%91%E5%BF%83%E5%BE%97%EF%BC%88%E4%B8%80%EF%BC%89%E7%94%B5%E5%95%86%E5%80%92%E8%AE%A1%E6%97%B6%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://tancky.github.io/2017/10/30/微信小程序踩坑心得（一）电商倒计时效果实现/</id>
+    <published>2017-10-30T15:06:17.718Z</published>
+    <updated>2017-10-30T15:07:38.017Z</updated>
+    
+    <content type="html"><![CDATA[<p>标签（空格分隔）： xcx</p>
+<hr>
+<p>2017年1月9号，张小龙微信团队正式发布了微信小程序，直到现在已经过去了大半年时间了。用户广度和深度方面看起来和预期还是有点差距，但是这并不妨碍作为一个前端开发者的我对他浓厚的极其浓厚的兴趣。我曾经也很想自己开发一款app，如今小程序帮我做到了。最近着手了一个家具商城的小程序项目，特地分享一下自己的踩坑心得<a id="more"></a>，小程序的前景怎么样我不知道，我只知道动手就干！！！。</p>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>小程序跟各主流前端开发框架的理念一样（Vue，React，Angular），核心都是以数据驱动视图，抛弃了以前传统的前端开发，JQuery在手，天下我有的局面。在小程序中并不能直接的操作dom元素，所以用惯了JQ，zepto等js库的童鞋剁手吧。</p>
+<p>下面先来看一下倒计时的实现效果吧</p>
+<p><img src="http://oyn3t7b0h.bkt.clouddn.com/17-10-30/50597200.jpg" alt="倒计时效果"></p>
+<p>码代码前先把思路理清楚！！！码代码前先把思路理清楚！！！码代码前先把思路理清楚！！！</p>
+<p>重要的事情说三遍！！！</p>
+<p>1.从后端接口获取结束时间时的时间戳，我在项目中得到的是字段end_time</p>
+<p>2.通过JS调用原生的date方法获取当前的时间戳，</p>
+<p>3.用end_time 减去当前的时间戳，获得所有剩余的时间戳</p>
+<p>4.封装一个函数用来将时间戳转化为时间点，以天/时/分/秒返回。</p>
+<p>5.!!核心的一段代码，调用setimeout/setimeInterval()方法，每隔1秒循环递归调用方法，并改写数据that.setData({})，最终实现倒计时。</p>
+<p>在多嘴一句，私以为写代码之前都要养成一个良好的习惯，就是先理清楚业务逻辑，最好可以以脑图的方式展现出来，这样不仅可以锻炼自己的逻辑思维能力，还可以提高自己的软实力，从而提高开发效率。</p>
+<p>1.首先通过wx.request()API方法从后端请求数据接口</p>
+<p><img src="http://oyn3t7b0h.bkt.clouddn.com/17-10-30/50039104.jpg" alt="请求接口数据"></p>
+<p>2.将endTime变量存入data中，以便全局调用</p>
+<p><img src="http://oyn3t7b0h.bkt.clouddn.com/17-10-30/51145774.jpg" alt="请求接口数据"></p>
+<p>3.封装格式化日期函数，并返回拼接的日期字符串</p>
+<p><img src="http://oyn3t7b0h.bkt.clouddn.com/17-10-30/54901373.jpg" alt="请求接口数据"></p>
+<p>4.倒计时逻辑</p>
+<p><img src="http://oyn3t7b0h.bkt.clouddn.com/17-10-30/21813676.jpg" alt="倒计时逻辑"></p>
+<p>5.最后在生命周期onload函数中调用请求数据this.getlist()方法,并在请求成功返回后，调用coundDown函数实现倒计时！</p>
+<p><img src="http://oyn3t7b0h.bkt.clouddn.com/17-10-30/18027799.jpg" alt="倒计时逻辑"></p>
+<p>以上</p>
+<h2 id="写在结尾"><a href="#写在结尾" class="headerlink" title="写在结尾"></a>写在结尾</h2><p>这是我进行开发的第二个项目，也是第一个电商类型的小程序项目，其中有很多的坑需要一步步的踩，由于项目周期非常的紧迫，所以只有抽出空来记录下自己的学习经验。在前端工程化愈演愈烈的今天，学习新技术是必不可少的，只有紧跟时代才不会被时代所淘汰。前端框架虽多，但其实万变不离其宗，只要深入理解了其中的设计思想，剩下的就仅仅是看api了。前端之路任重而道远，且行且珍惜。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;标签（空格分隔）： xcx&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;2017年1月9号，张小龙微信团队正式发布了微信小程序，直到现在已经过去了大半年时间了。用户广度和深度方面看起来和预期还是有点差距，但是这并不妨碍作为一个前端开发者的我对他浓厚的极其浓厚的兴趣。我曾经也很想自己开发一款app，如今小程序帮我做到了。最近着手了一个家具商城的小程序项目，特地分享一下自己的踩坑心得
+    
+    </summary>
+    
+      <category term="xcx" scheme="https://tancky.github.io/categories/xcx/"/>
+    
+    
+      <category term="xcx" scheme="https://tancky.github.io/tags/xcx/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vue项目打包上线流程</title>
     <link href="https://tancky.github.io/2017/07/13/vue%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E4%B8%8A%E7%BA%BF%E6%B5%81%E7%A8%8B/"/>
     <id>https://tancky.github.io/2017/07/13/vue项目打包上线流程/</id>
     <published>2017-07-13T15:31:06.323Z</published>
-    <updated>2017-07-13T15:32:08.808Z</updated>
+    <updated>2017-07-13T15:34:36.886Z</updated>
     
     <content type="html"><![CDATA[<p> 自己写的Vue项目终于大致完成了，由于没有买域名和服务器，但是项目要上线。思来想去发现github上可以直接用创建个人项目的上线演示，这给我带来了极大的便利，在维护源码的同时还能生成项目主页可供在线预览。简直美滋滋。<a id="more"></a>但是由于第一次用这玩意儿，花费了我整整一天的时间，期间出现了各种问题，但俗话说得好：功夫不负有心人，终于在晚上把他给上线了，哈哈哈。</p>
 <p>Github给用户提供了运行静态页面的地址，如何展示个人项目的静态页面？以下是创建项目主页的关键：</p>
@@ -167,7 +217,7 @@
 <p>-g :代表全局安装。如果你安装时报错，一般是网络问题，你可以尝试用cnpm来进行安装。安装完成后，可以用vue -V来进行查看 vue-cli的版本号。注意这里的V是大写的。我这里版本号是2.8.1.</p>
 <p>如果vue -V的命令管用了，说明已经顺利的把vue-cli安装到我们的计算机里了。</p>
 <h2 id="二-初始化项目"><a href="#二-初始化项目" class="headerlink" title="二. 初始化项目"></a>二. 初始化项目</h2><p>我们用vue init命令来初始化项目，具体看一下这条命令的使用方法。</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vue init &lt;template-<span class="built_in">name</span>&gt; &lt;project-<span class="built_in">name</span>&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vue init <span class="tag">&lt;<span class="name">template-name</span>&gt;</span> <span class="tag">&lt;<span class="name">project-name</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>init：表示我要用vue-cli来初始化项目</p>
 <p>template-name：表示模板名称，vue-cli官方为我们提供了5种模板，</p>
 <p>webpack-一个全面的webpack+vue-loader的模板，功能包括热加载，linting,检测和CSS扩展。</p>
