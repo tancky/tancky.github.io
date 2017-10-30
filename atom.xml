@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tancky.github.io/"/>
-  <updated>2017-10-30T15:07:38.017Z</updated>
+  <updated>2017-10-30T15:10:35.989Z</updated>
   <id>https://tancky.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="https://tancky.github.io/2017/10/30/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%B8%A9%E5%9D%91%E5%BF%83%E5%BE%97%EF%BC%88%E4%B8%80%EF%BC%89%E7%94%B5%E5%95%86%E5%80%92%E8%AE%A1%E6%97%B6%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/"/>
     <id>https://tancky.github.io/2017/10/30/微信小程序踩坑心得（一）电商倒计时效果实现/</id>
     <published>2017-10-30T15:06:17.718Z</published>
-    <updated>2017-10-30T15:07:38.017Z</updated>
+    <updated>2017-10-30T15:10:35.989Z</updated>
     
-    <content type="html"><![CDATA[<p>标签（空格分隔）： xcx</p>
+    <content type="html"><![CDATA[<p>标签： xcx</p>
 <hr>
 <p>2017年1月9号，张小龙微信团队正式发布了微信小程序，直到现在已经过去了大半年时间了。用户广度和深度方面看起来和预期还是有点差距，但是这并不妨碍作为一个前端开发者的我对他浓厚的极其浓厚的兴趣。我曾经也很想自己开发一款app，如今小程序帮我做到了。最近着手了一个家具商城的小程序项目，特地分享一下自己的踩坑心得<a id="more"></a>，小程序的前景怎么样我不知道，我只知道动手就干！！！。</p>
 <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>小程序跟各主流前端开发框架的理念一样（Vue，React，Angular），核心都是以数据驱动视图，抛弃了以前传统的前端开发，JQuery在手，天下我有的局面。在小程序中并不能直接的操作dom元素，所以用惯了JQ，zepto等js库的童鞋剁手吧。</p>
@@ -52,7 +52,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;标签（空格分隔）： xcx&lt;/p&gt;
+      &lt;p&gt;标签： xcx&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;2017年1月9号，张小龙微信团队正式发布了微信小程序，直到现在已经过去了大半年时间了。用户广度和深度方面看起来和预期还是有点差距，但是这并不妨碍作为一个前端开发者的我对他浓厚的极其浓厚的兴趣。我曾经也很想自己开发一款app，如今小程序帮我做到了。最近着手了一个家具商城的小程序项目，特地分享一下自己的踩坑心得
     
@@ -217,7 +217,7 @@
 <p>-g :代表全局安装。如果你安装时报错，一般是网络问题，你可以尝试用cnpm来进行安装。安装完成后，可以用vue -V来进行查看 vue-cli的版本号。注意这里的V是大写的。我这里版本号是2.8.1.</p>
 <p>如果vue -V的命令管用了，说明已经顺利的把vue-cli安装到我们的计算机里了。</p>
 <h2 id="二-初始化项目"><a href="#二-初始化项目" class="headerlink" title="二. 初始化项目"></a>二. 初始化项目</h2><p>我们用vue init命令来初始化项目，具体看一下这条命令的使用方法。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vue init <span class="tag">&lt;<span class="name">template-name</span>&gt;</span> <span class="tag">&lt;<span class="name">project-name</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vue init &lt;template-<span class="built_in">name</span>&gt; &lt;project-<span class="built_in">name</span>&gt;</div></pre></td></tr></table></figure>
 <p>init：表示我要用vue-cli来初始化项目</p>
 <p>template-name：表示模板名称，vue-cli官方为我们提供了5种模板，</p>
 <p>webpack-一个全面的webpack+vue-loader的模板，功能包括热加载，linting,检测和CSS扩展。</p>
